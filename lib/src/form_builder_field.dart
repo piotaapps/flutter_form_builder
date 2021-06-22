@@ -130,7 +130,7 @@ class FormBuilderFieldState<F extends FormBuilderField<T?>, T>
     _focusNode!.removeListener(_touchedHandler);
     // Dispose focus node when created by initState
     if (null == widget.focusNode) {
-      _focusNode!.dispose();
+      //_focusNode!.dispose();
     }
     _formBuilderState?.unregisterField(widget.name, this);
     super.dispose();
