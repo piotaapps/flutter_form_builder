@@ -111,7 +111,8 @@ class FormBuilderCheckbox extends FormBuilderField<bool> {
           focusNode: focusNode,
           builder: (FormFieldState<bool?> field) {
             final state = field as _FormBuilderCheckboxState;
-
+            // ignore: omit_local_variable_types
+            bool val = (state.value ?? initialValue) ?? false;
             return InputDecorator(
               decoration: state.decoration(),
               child: CheckboxListTile(
@@ -119,7 +120,7 @@ class FormBuilderCheckbox extends FormBuilderField<bool> {
                 isThreeLine: false,
                 title: title,
                 subtitle: subtitle,
-                value: state.value,
+                value: val,
                 onChanged: state.enabled
                     ? (val) {
                         state.requestFocus();
